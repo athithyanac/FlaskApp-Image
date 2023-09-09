@@ -3,7 +3,7 @@ RUN mkdir /var/app
 RUN adduser -h /var/app -s /bin/sh -D flaskapp
 WORKDIR /var/app
 COPY . .
-RUN chown -R flaskapp:flaskapp
+RUN chown -R flaskapp:flaskapp /var/app
 RUN apk update && apk add --no-cache python3 && apk add --no-cache py-pip
 RUN pip install -r requirements.txt
 USER flaskapp
